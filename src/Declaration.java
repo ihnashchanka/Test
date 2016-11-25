@@ -13,9 +13,7 @@ public class Declaration {
     private ArrayList<Integer> sizes = new ArrayList<Integer>();
 
     public Declaration(String line) {
-        line = line.replaceAll("\\[", " ");
-        line = line.replaceAll("\\]", " ");
-        line = line.replaceAll("\\;", " ");
+        line = line.replaceAll("[\\[\\];]+", " ");
         Scanner sc = new Scanner(line);
         if (sc.hasNext()) type = sc.next();
         if (sc.hasNext()) name = sc.next();
